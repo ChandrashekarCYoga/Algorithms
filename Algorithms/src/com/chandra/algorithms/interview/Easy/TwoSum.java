@@ -9,6 +9,7 @@
  */
 package com.chandra.algorithms.interview.Easy;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +28,10 @@ public class TwoSum {
 
 		System.out.println(isFound(list1, k));
 
+		int[] list2 = { 3, 5, -4, 8, 11, 1, -1, 6 };
+		int targetSum = 10;
+		System.out.println(Arrays.toString(twoNumberSum(list2, targetSum)));
+
 	}
 
 	// While we iterate and inserting elements into the table, we also look
@@ -44,4 +49,19 @@ public class TwoSum {
 		}
 		return false;
 	}
+
+	// O(n^2) time | O(1) space
+	public static int[] twoNumberSum(int[] array, int targetSum) {
+		for (int i = 0; i < array.length - 1; i++) {
+			int firstNum = array[i];
+			for (int j = i + 1; j < array.length; j++) {
+				int secondNum = array[j];
+				if (firstNum + secondNum == targetSum) {
+					return new int[] { firstNum, secondNum };
+				}
+			}
+		}
+		return new int[0];
+	}
+
 }
