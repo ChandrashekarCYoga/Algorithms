@@ -39,9 +39,9 @@ public class BinarySearch {
 		if (target == potentialMatch) {
 			return middle;
 		} else if (target < potentialMatch) {
-			return binarySearch(array, target, left, middle - 1);
+			return binarySearchR(array, target, left, middle - 1);
 		} else {
-			return binarySearch(array, target, middle + 1, right);
+			return binarySearchR(array, target, middle + 1, right);
 		}
 	}
 
